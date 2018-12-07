@@ -1,4 +1,3 @@
-
 **Table​ ​of​ ​Contents**
 
 **1. Introduction                                                                                2**
@@ -495,6 +494,8 @@ We will use the Adapt servers to verify student usernames and passwords at the l
 
 
 **6.2 Gantt Chart**
+
+
 ![Gantt Chart](/Functional Spec/Functional Spec Images/gantt_diagram.PNG)
  
 
