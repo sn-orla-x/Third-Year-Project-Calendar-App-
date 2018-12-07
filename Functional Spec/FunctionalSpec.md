@@ -448,11 +448,13 @@ We will use the Adapt servers to verify student usernames and passwords at the l
 **5. High-Level Design**
 
 **5.1 Context Diagram**
-![Context Diagram](/Functional Spec/Funtional Spec Images/Context_Diagram.png)
+
+![Context Diagram](/Functional Spec/Functional Spec Images/Context_Diagram.png)
 
 
 
 **5.2 Use Case Diagram**
+
 ![Use Case Diagram](/Functional Spec/Functional_Spec_Images/Use_Case_Diagram.png)
 
 
