@@ -1,6 +1,5 @@
 
 
-
 **Table​ ​of​ ​Contents**
 
 **1. Introduction                                                                                2**
@@ -41,8 +40,8 @@
 
 **5. High-Level Design                                                                        14**
 
-● Context Diagram                                                                        14
-● Use Case Diagram                                                                15
+- Context Diagram                                                                        14
+- Use Case Diagram                                                                15
 
 **6. Preliminary Schedule                                                                        16**
 
