@@ -1,5 +1,4 @@
 
-
 **Table​ ​of​ ​Contents**
 
 **1. Introduction                                                                                2**
@@ -413,7 +412,8 @@ _Dependencies with other Requirements_
 If this is used as an advertisement space, it will depend on the ability to promote events. Regardless, it will depend on events being present - and therefore will have a dependency on the create event function.
 
 
-
+**4. System Architecture**
+![System Architecture Diagram](/Functional Spec/Funtional Spec Images/SystemArchitecture.png)
 
 **4.1​ ​iOS​ ​App**
 
@@ -448,12 +448,12 @@ We will use the Adapt servers to verify student usernames and passwords at the l
 **5. High-Level Design**
 
 **5.1 Context Diagram**
-
+![Context Diagram](/Functional Spec/Funtional Spec Images/Context_Diagram.png)
 
 
 
 **5.2 Use Case Diagram**
-
+![Use Case Diagram](/Functional Spec/Functional_Spec_Images/Use_Case_Diagram.png)
 
 
 
@@ -495,7 +495,7 @@ We will use the Adapt servers to verify student usernames and passwords at the l
 
 
 **6.2 Gantt Chart**
-
+![Gantt Chart](/Functional Spec/Functional Spec Images/gantt_diagram.PNG)
  
 
 **7. Appendices**
