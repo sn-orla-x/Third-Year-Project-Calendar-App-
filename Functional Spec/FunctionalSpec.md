@@ -455,7 +455,7 @@ We will use the Adapt servers to verify student usernames and passwords at the l
 
 **5.2 Use Case Diagram**
 
-![Use Case Diagram](/Functional Spec/Functional_Spec_Images/Use_Case_Diagram.png)
+![Use Case Diagram](/Functional Spec/Functional Spec Images/Use_Case_Diagram.png)
 
 
 
