@@ -412,6 +412,7 @@ If this is used as an advertisement space, it will depend on the ability to prom
 
 
 **4. System Architecture**
+
 ![System Architecture Diagram](/Functional Spec/Functional Spec Images/SystemArchitecture.png)
 
 **4.1​ ​iOS​ ​App**
