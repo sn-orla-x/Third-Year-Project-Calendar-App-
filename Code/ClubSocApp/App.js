@@ -16,13 +16,13 @@ export default class App extends React.Component {
           <View style={styles.butt}>
             <Button
              onPress={this._onPressButton}
-              title="Press Me"
-              color="#aad0d1"
+              title="Clubs"
+              color="#fff"
             /> 
             <Button
              onPress={this._onPressButton}
-              title="Press Me"
-              color="#aad0d1"
+              title="Socs"
+              color="#fff"
             /> 
           </View>
         </View>
