@@ -13,12 +13,13 @@ export default class App extends React.Component {
       <View style={{flex:1}}>
         <View style={{height: 75, backgroundColor: '#aad0d1'}}>
           <Text style = {styles.mint}></Text>
-            <View style={styles.butt}>
+            <View style = {styles.buttin}>
             <Button
             onPress={this._onPressButton}
             title="DCU C&S"
             color="#fff"
             />
+            <View style={styles.butt}>
             <Button
              onPress={this._onPressButton}
               title="Clubs"
@@ -29,6 +30,7 @@ export default class App extends React.Component {
               title="Socs"
               color="#fff"
             /> 
+            </View>
           </View>
         </View>
         <View style={{flex: 2, backgroundColor: '#696969'}} />
@@ -57,14 +59,23 @@ const styles = StyleSheet.create({
     textAlignVertical: 'bottom',
   },
    
-  butt: {
+  buttin: {
     flex: 1,
     margin: 10,
     flexDirection: 'row',
     justifyContent: 'flex-end',
+    textAlign: 'right',
+    textAlignVertical: 'bottom',
+    color: '#fff',
+  },
+   
+  butt: {
+    flex: 1,
+    //margin: 0,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
     textAlign: 'left',
     textAlignVertical: 'bottom',
-    flex: 1,
     color: '#fff',
   }
 });
