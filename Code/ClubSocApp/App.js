@@ -12,8 +12,13 @@ export default class App extends React.Component {
         //<View style = {{flex: 1, backgroundColor: '#aaf0d1'}} />
       <View style={{flex:1}}>
         <View style={{height: 75, backgroundColor: '#aad0d1'}}>
-          <Text style = {styles.mint}>DCU C&S</Text>
-          <View style={styles.butt}>
+          <Text style = {styles.mint}></Text>
+            <View style={styles.butt}>
+            <Button
+            onPress={this._onPressButton}
+            title="DCU C&S"
+            color="#fff"
+            />
             <Button
              onPress={this._onPressButton}
               title="Clubs"
@@ -50,10 +55,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     textAlign: 'left',
     textAlignVertical: 'bottom',
-
-
-
   },
+   
   butt: {
     flex: 1,
     margin: 10,
@@ -63,12 +66,5 @@ const styles = StyleSheet.create({
     textAlignVertical: 'bottom',
     flex: 1,
     color: '#fff',
-
-
-
   }
-
-
-
-
 });
