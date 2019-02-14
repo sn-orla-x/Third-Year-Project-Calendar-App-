@@ -34,13 +34,13 @@ export default class App extends React.Component {
           </View>
         </View>
         <View style={{flex: 2, backgroundColor: '#696969'}} />
-       <View style ={styles.addy}>
-            <Button
-             onPress={this._onPressButton}
-              title="Add an event"
-              color="#000"
-            /> 
-              </View>
+          <View style ={styles.addy}>
+          <Button
+           onPress={this._onPressButton}
+           title="Add an event"
+           color="#000"
+          /> 
+        </View>
       </View>
 
     );
