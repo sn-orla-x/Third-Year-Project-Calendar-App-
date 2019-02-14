@@ -115,16 +115,16 @@ var event = {
 function addEvents(auth, calendar){
   calendar.events.insert({
     auth: auth,
-    calendarId: 'primary',
+    calendarId: '5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com',
     resource: {
-      'summary': 'diva cup',
-      'description': 'buy one',
+      'summary': 'FotoCrawl',
+      'description': 'FotoCrawl in City Center',
       'start': {
-        'dateTime': '2019-02-15T00:00:00',
+        'dateTime': '2019-02-15T13:00:00',
         'timeZone': 'GMT',
       },
       'end': {
-        'dateTime': '2019-02-15T01:00:00',
+        'dateTime': '2019-02-15T14:00:00',
         'timeZone': 'GMT',
       },
     },
