@@ -74,9 +74,9 @@ function getAccessToken(oAuth2Client, callback) {
 
 function listEvents(auth) {
   var calendar = google.calendar('v3');
-
+  var socCalendarID = getSociety();
   var event = makeEvent();
-  addEvents(auth, calendar, event); // Add events
+  addEvents(auth, calendar, event,socCalendarID); // Add events
   //removeEvents(auth, calendar); // Remove events
 }
 
@@ -96,13 +96,15 @@ function makeEvent() {
   var eventDate = readlines.question('What date does your event take place on?: ');
   var startTime = readlines.question('What time does your event start at?: ');
   var endTime = readlines.question('What time does your event end at?: ');
-  const society = readlines.question('What club/soc is your event for?: ');
+
 
   console.log(eventName +" " + eventSummary +" "+ location+" "+ eventDate +" "+ startTime +" "+ endTime);
   var eventStart = formatTimes(eventDate, startTime);
   var eventEnd = formatTimes(eventDate, endTime);
   console.log(eventStart);
   console.log(eventEnd);
+
+
 
   var event = {
     'summary': eventName,
@@ -126,10 +128,20 @@ function makeEvent() {
   
   };
 
-function addEvents(auth, calendar, event){
+function getSociety(){
+  var calID = {
+    FotoSoc: "4afhe3v6jqi6f9ohj658d5s8r4@group.calendar.google.com",
+    Tennis: "5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com",
+  };
+  var society = readlines.question("What society are you adding an event to?: ");
+  console.log(calID[society]);
+  return calID[society]
+}
+
+function addEvents(auth, calendar, event, socCalendarID){
   calendar.events.insert({
     auth: auth,
-    calendarId: '5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com',
+    calendarId: socCalendarID,
     resource: event,
   }, function(err, res) {
     if (err) {
@@ -156,3 +168,7 @@ function removeEvents(auth, calendar){
 function formatTimes(date, time) {
   return date+'T'+time+':00';
 };
+
+module.exports.makeEvent = makeEvent;
+module.exports.getSociety = getSociety;
+module.exports.formatTimes = formatTimes;
