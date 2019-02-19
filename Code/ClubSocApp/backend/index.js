@@ -117,8 +117,8 @@ function addEvents(auth, calendar){
     auth: auth,
     calendarId: '5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com',
     resource: {
-      'summary': 'FotoCrawl',
-      'description': 'FotoCrawl in City Center',
+      'summary': 'yike',
+      'description': 'ew',
       'start': {
         'dateTime': '2019-02-15T13:00:00',
         'timeZone': 'GMT',
