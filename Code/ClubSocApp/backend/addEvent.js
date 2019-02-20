@@ -2,6 +2,8 @@ const fs = require('fs');
 const readline = require('readline');
 const readlines = require('readline-sync');
 const {google} = require('googleapis');
+//most of this code was taken from the google calendar api example for nodejs, then modified
+//this can be found here: https://developers.google.com/calendar/create-events
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/calendar.event'];
