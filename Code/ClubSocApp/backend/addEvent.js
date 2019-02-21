@@ -6,7 +6,7 @@ const {google} = require('googleapis');
 //this can be found here: https://developers.google.com/calendar/create-events
 
 // If modifying these scopes, delete token.json.
-const SCOPES = ['https://www.googleapis.com/auth/calendar.event'];
+const SCOPES = ['https://www.googleapis.com/auth/calendar'];
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
@@ -79,7 +79,6 @@ function listEvents(auth) {
   var socCalendarID = getSociety();
   var event = makeEvent();
   addEvents(auth, calendar, event,socCalendarID); // Add events
-  //removeEvents(auth, calendar); // Remove events
 }
 
 
@@ -110,6 +109,7 @@ function makeEvent() {
 
   var event = {
     'summary': eventName,
+    'id': eventName,
     'location': location,
     'description': eventSummary,
     'start': {
@@ -154,19 +154,7 @@ function addEvents(auth, calendar, event, socCalendarID){
   });
 }
 
-function removeEvents(auth, calendar){
-  calendar.events.delete({
-    auth: auth,
-    calendarId: 'primary',
-    eventId: "#####",
-  }, function(err) {
-    if (err) {
-      console.log('Error: ' + err);
-      return;
-    }
-    console.log("Removed");
-  });
-}
+
 function formatTimes(date, time) {
   return date+'T'+time+':00';
 };
