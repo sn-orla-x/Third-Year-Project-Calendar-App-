@@ -87,11 +87,11 @@ const styles = StyleSheet.create({
   },
    
    addy: {
-    flex: 1,
+    flex: 2,
     //margin: 0,
-    flexDirection: 'column',
+    //flexDirection: 'column',
     justifyContent: 'flex-end',
-    textAlign: 'right',
+    textAlign: 'center',
     textAlignVertical: 'bottom',
     color: '#000',
   }
