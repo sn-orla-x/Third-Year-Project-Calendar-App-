@@ -35,11 +35,11 @@ export default class App extends React.Component {
         </View>
         <View style={{flex: 2, backgroundColor: '#696969'}} />
           <View style ={styles.addy}>
-          <Button
+         <Button
            onPress={this._onPressButton}
            title="Add an event"
-           color="#000"
-          /> 
+           color="#fff"
+          />
         </View>
       </View>
 
@@ -50,14 +50,14 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#696969',
+    //backgroundColor: '#696969',
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   mint: {
     flex: 1,
-    color: '#fff',
+    //color: '#fff',
     fontSize: 25,
     //fontWeight: 'bold',
     flexDirection: 'row',
@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
    
    addy: {
     flex: 2,
+    backgroundColor: '#696969',   
     //margin: 0,
     //flexDirection: 'column',
     justifyContent: 'flex-end',
