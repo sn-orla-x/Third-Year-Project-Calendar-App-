@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "764934368349",
-    "firebase_url": "https://clubssocsdcu.firebaseio.com",
-    "project_id": "clubssocsdcu",
-    "storage_bucket": "clubssocsdcu.appspot.com"
+    "project_number": "27581815269",
+    "firebase_url": "https://dcuclubsocapp-1550065655214.firebaseio.com",
+    "project_id": "dcuclubsocapp-1550065655214",
+    "storage_bucket": "dcuclubsocapp-1550065655214.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:764934368349:android:a3a2296568f71861",
+        "mobilesdk_app_id": "1:27581815269:android:a3a2296568f71861",
         "android_client_info": {
           "package_name": "com.clubsocapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "764934368349-osst8i0gjjo59c35r3r79rl5ptj3kis8.apps.googleusercontent.com",
+          "client_id": "27581815269-avrnlr1lpnvp8jq1h3bfao9867o5prpm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCYpv5Qk4J-x3hZ-OSW0lS2mw3Y0ay5ZBU"
+          "current_key": "AIzaSyCjvesE32jlFxgawWG4MRg7W8HK6JN8NjU"
         }
       ],
       "services": {
