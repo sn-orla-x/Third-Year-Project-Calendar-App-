@@ -5,6 +5,8 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import LoginScreen from './screens/loginScreen';
 import DashboardScreen from './screens/dashboardScreen';
 import LoadingScreen from './screens/loadingScreen';
+import ClubScreen from './screens/clubScreen';
+import SocScreen from './screens/socScreen';
 
 import firebase from 'firebase';
 import { firebaseConfig } from './config';
