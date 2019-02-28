@@ -140,19 +140,6 @@ function addEvents(auth, calendar, event){
   });
 }
 
-function removeEvents(auth, calendar){
-  calendar.events.delete({
-    auth: auth,
-    calendarId: 'primary',
-    eventId: "#####",
-  }, function(err) {
-    if (err) {
-      console.log('Error: ' + err);
-      return;
-    }
-    console.log("Removed");
-  });
-}
 function formatTimes(date, time) {
   return date+'T'+time+':00';
 };

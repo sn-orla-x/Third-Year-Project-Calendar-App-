@@ -70,7 +70,7 @@ function getAccessToken(oAuth2Client, callback) {
  * Lists the next 10 events on the user's primary calendar.
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
-function listEvents(auth) {
+function listSocietyEvents(auth) {
   const calendar = google.calendar({version: 'v3', auth});
   calendar.events.list({
     calendarId: '4afhe3v6jqi6f9ohj658d5s8r4@group.calendar.google.com',
@@ -79,16 +79,18 @@ function listEvents(auth) {
     singleEvents: true,
     orderBy: 'startTime',
   }, (err, res) => {
-    if (err) return console.log('The API returned an error: ' + err);
+    if (err) return ('The API returned an error: ' + err);
     const events = res.data.items;
     if (events.length) {
-      console.log('Upcoming FotoSoc Events:');
       events.map((event, i) => {
         const start = event.start.dateTime || event.start.date;
-        console.log(`${start} - ${event.summary}`);
+        return ('Upcoming FotoSoc Events:' + `${start} - ${event.summary}`);
       });
     } else {
-      console.log('No upcoming events found.');
+      return('No upcoming events found.');
     }
   });
 }
+
+
+module.exports.listSocietyEvents = listSocietyEvents;

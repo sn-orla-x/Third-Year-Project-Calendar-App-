@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, AppRegistry, Alert } from 'react-native';
+import { View, Text, StyleSheet, Button, AppRegistry, Alert, ScrollView } from 'react-native';
 import firebase from 'firebase';
+var listClubEvents = require('/backend/listClubEvents');
+var listSocietyEvents = require('/backend/listSocietyEvents')
+
 
 class DashboardScreen extends Component {
   render() {
+    let ClubEvent = listClubEvents.listClubEvents();
+    let SocietyEvent = listSocietyEvents.listSocietyEvents();
     return (
       <View style={{felx:1}}>
         <View style = {{height: 75, backgroundColor: '#aad0d1'}}>
@@ -30,6 +35,19 @@ class DashboardScreen extends Component {
             />
           </View>
         </View>
+      </View>
+      <View style = {{flex:2}}>
+        <ScrollView>
+          <Text> 
+            Upcoming Club Events: 
+           <this.ClubEvent />
+          </Text>
+          <Text>
+            Upcoming Society Events:
+            <this.SocietyEvent />
+          </Text>
+        </ScrollView>
+        
       </View>
     );
   }
