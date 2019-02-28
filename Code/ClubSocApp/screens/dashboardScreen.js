@@ -31,21 +31,13 @@ class DashboardScreen extends Component {
           </View>
         </View>
       </View>
-
-        
-       
-      </View>
     );
   }
 }
 
+export default DashboardScreen
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-  onst styles = StyleSheet.create({
   container: {
     flex: 1,
     //backgroundColor: '#696969',
@@ -94,6 +86,4 @@ const styles = StyleSheet.create({
     textAlignVertical: 'bottom',
     color: '#000',
   }
-});
-export default DashboardScreen;
 });
