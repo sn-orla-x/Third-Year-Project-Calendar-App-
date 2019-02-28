@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button, AppRegistry, Alert, ScrollView } from 'react-native';
 import firebase from 'firebase';
-var listClubEvents = require('/backend/listClubEvents');
-var listSocietyEvents = require('/backend/listSocietyEvents')
+var listClubEvents = require('../backend/listClubEvents');
+var listSocietyEvents = require('../backend/listSocietyEvents')
 
 
 class DashboardScreen extends Component {
@@ -36,20 +36,17 @@ class DashboardScreen extends Component {
           </View>
         </View>
       </View>
-      <View style = {{flex:2}}>
-        <ScrollView>
-          <Text> 
-            Upcoming Club Events: 
-           <this.ClubEvent />
-          </Text>
-          <Text>
-            Upcoming Society Events:
-            <this.SocietyEvent />
-          </Text>
-        </ScrollView>
-        
-      </View>
-    );
+//        <ScrollView>
+//          <Text> 
+//            Upcoming Club Events: 
+//           <this.ClubEvent />
+//          </Text>
+//          <Text>
+//            Upcoming Society Events:
+//            <this.SocietyEvent />
+//          </Text>
+//        </ScrollView>
+      );
   }
 }
 
