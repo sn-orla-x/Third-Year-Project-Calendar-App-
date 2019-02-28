@@ -1,6 +1,11 @@
 const fs = require('fs');
 const readline = require('readline');
+const readlines = require('readline-sync')
 const {google} = require('googleapis');
+
+//most of this code was taken from the google calendar api quickstart for nodejs, then modified
+//this can be found here: https://developers.google.com/calendar/quickstart/nodejs
+
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/calendar'];
@@ -66,87 +71,37 @@ function getAccessToken(oAuth2Client, callback) {
   });
 }
 
-/**
- * Lists the next 10 events on the user's primary calendar.
- * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
- */
-
 function listEvents(auth) {
-  var calendar = google.calendar('v3');
-
-  addEvents(auth, calendar); // Add events
-  removeEvents(auth, calendar); // Remove events
+  deleteEvent(); // deleteEvent
 }
 
+function deleteEvent(auth) {
+    const calendar = google.calendar({version: 'v3', auth})
+    var calendarID = getSociety();
+    var eventID = readlines.question("What event do you want to delete?: ");
 
-// Refer to the Node.js quickstart on how to setup the environment:
-// https://developers.google.com/calendar/quickstart/node
-// Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
-// stored credentials.
-
-var event = {
-  'summary': 'Google I/O 2015',
-  'location': '800 Howard St., San Francisco, CA 94103',
-  'description': 'A chance to hear more about Google\'s developer products.',
-  'start': {
-    'dateTime': '2019-05-28T09:00:00-07:00',
-    'timeZone': 'America/Los_Angeles',
-  },
-  'end': {
-    'dateTime': '2019-05-28T17:00:00-07:00',
-    'timeZone': 'America/Los_Angeles',
-  },
-  'recurrence': [
-    'RRULE:FREQ=DAILY;COUNT=2'
-  ],
-  'attendees': [
-    {'email': 'lpage@example.com'},
-    {'email': 'sbrin@example.com'},
-  ],
-  'reminders': {
-    'useDefault': false,
-    'overrides': [
-      {'method': 'email', 'minutes': 24 * 60},
-      {'method': 'popup', 'minutes': 10},
-    ],
-  },
-};
-
-function addEvents(auth, calendar){
-  calendar.events.insert({
-    auth: auth,
-    calendarId: '5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com',
-    resource: {
-      'summary': 'yike',
-      'description': 'ew',
-      'start': {
-        'dateTime': '2019-02-15T13:00:00',
-        'timeZone': 'GMT',
-      },
-      'end': {
-        'dateTime': '2019-02-15T14:00:00',
-        'timeZone': 'GMT',
-      },
-    },
-  }, function(err, res) {
-    if (err) {
-      console.log('Error: ' + err);
-      return;
+    calendar.events.delete ({
+            auth: auth,
+            calendarId: calendarID,
+            eventId: eventID,
+        }, function(err, res) {
+            if(err){
+                console.log('Error: ' + err);
+                return;
+            }
+            console.log(res);
+        });
     }
-    console.log(res);
-  });
+
+
+
+function getSociety(){
+  var calID = {
+    FotoSoc: "4afhe3v6jqi6f9ohj658d5s8r4@group.calendar.google.com",
+    Tennis: "5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com",
+  };
+  var society = readlines.question("What society are you deleting an event from?: ");
+  console.log(calID[society]);
+  return calID[society]
 }
 
-function removeEvents(auth, calendar){
-  calendar.events.delete({
-    auth: auth,
-    calendarId: 'primary',
-    eventId: "#####",
-  }, function(err) {
-    if (err) {
-      console.log('Error: ' + err);
-      return;
-    }
-    console.log("Removed");
-  });
-}

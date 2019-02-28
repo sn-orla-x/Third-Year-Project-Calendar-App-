@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, AppRegistry, View, Alert } from 'react-native';
+import { View, Text, StyleSheet, Button, AppRegistry, Alert } from 'react-native';
 import firebase from 'firebase';
 
 class DashboardScreen extends Component {
@@ -16,13 +16,18 @@ class DashboardScreen extends Component {
             <Button
             title="Socs"
             onPress = {this.props.navigation.navigate('SocScreen')}
-            color="fff"
+            color="#fff"
             />
             <Button
             title="Clubs"
             onPress = {this.props.navigation.navigate('ClubScreen')}
+            color ="#fff"
             />
-            <Button title="Sign out" onPress={() => firebase.auth().signOut()} />
+            <Button 
+            title="Sign out" 
+            onPress={() => firebase.auth().signOut()}
+            color = "#fff"
+            />
           </View>
         </View>
       </View>
