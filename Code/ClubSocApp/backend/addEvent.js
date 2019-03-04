@@ -72,7 +72,7 @@ function getAccessToken(oAuth2Client, callback) {
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
 
-function listEvents(auth) {
+function makeAndAddEvent(auth) {
   var calendar = google.calendar('v3');
 
   var event = makeEvent();
@@ -143,3 +143,8 @@ function addEvents(auth, calendar, event){
 function formatTimes(date, time) {
   return date+'T'+time+':00';
 };
+
+module.exports.addEvents = addEvents;
+module.exports.formatTimes = formatTimes;
+module.exports.makeEvent = makeEvent;
+module.exports.makeAndAddEvent = makeAndAddEvent;
