@@ -7,6 +7,7 @@ import DashboardScreen from './screens/dashboardScreen';
 import LoadingScreen from './screens/loadingScreen';
 import ClubScreen from './screens/clubScreen';
 import SocScreen from './screens/socScreen';
+import AddEventScreen from './screens/addEventScreen';
 
 import firebase from 'firebase';
 import { firebaseConfig } from './config';
@@ -24,6 +25,8 @@ const AppSwitchNavigator = createSwitchNavigator({
   DashboardScreen: DashboardScreen,
   ClubScreen: ClubScreen,
   SocScreen: SocScreen,
+  AddEventScreen: AddEventScreen,
+
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);
