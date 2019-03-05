@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, TextInput, StyleSheet, ScrollView } from 'react-native'
+import firebase from 'firebase';
+
+import LoginScreen from './loginScreen'
 
 class Inputs extends Component {
    state = {
@@ -21,13 +24,13 @@ class Inputs extends Component {
    }
    handleStartDateTime = (text) => {
       text = text.split(' ');
-      text = `${text[0]}T${text[1]}:00`;
-      this.setState({eventDateTime: text})
+      text = `${text[0]}T${text[1]}:00.00`;
+      this.setState({eventStartDateTime: text})
    }
    handleEndDateTime = (text) => {
       text = text.split(' ');
-      text = `${text[0]}T${text[1]}:00`;
-      this.setState
+      text = `${text[0]}T${text[1]}:00.00`;
+      this.setState({eventEndDateTime: text})
    }
    handleClubSoc = (text) => {
       var calID = {
@@ -38,35 +41,44 @@ class Inputs extends Component {
     text = `${calID[text]}`
     this.setState({clubSoc: text})
       
-   }
-    addEvent(eventName, eventDescription, eventStartDateTime, eventEndDateTime, location, clubSoc,) {
-    try{
-    const response = fetch(`https://www.googleapis.com/calendar/v3/calendars/${clubSoc}/events?&key=AIzaSyCWWE4pVnW42iCQGSW0ElYEeF1IuVD5OpM`,
-      {method: "POST",
-       headers:new Headers({
-        "accept": "application/json",
-        "content-type" : "application/json"}),
-       body: JSON.stringify({
-         start : {
-          "dateTime": eventStartDateTime,
-          "timeZone": "etc/GMT"
-         },
-         "end": {
-          "dateTime": eventEndDateTime,
-          "timeZone": "etc/GMT"
-         },
-         "summary": eventName,
-         "description": eventDescription,
-         "location": location
+   };
+  
+  async addEvent() {
 
-       })}
-      )}
-    catch (e) {
-    console.log('Request failed', error);
-  };
- // const posts = response.json()
-  //console.log(posts)
-   }
+            let summary = this.state.eventName;
+            let description = this.state.eventDescription;
+            let eventStartDateTime = this.state.eventStartDateTime;
+            let eventEndDateTime = this.state.eventEndDateTime;
+            let location = this.state.location;
+            let clubSoc = this. state.clubSoc;
+
+            var credential = firebase.auth.GoogleAuthProvider.credential(
+              googleUser.idToken,
+              googleUser.accessToken
+            );
+
+            fetch(`https://www.googleapis.com/calendar/v3/calendars/${clubSoc}/events`
+, {
+                method: 'POST',
+          
+                headers : new Headers(),
+                body:JSON.stringify({start: {
+                  "dateTime": eventStartDateTime,
+                },
+                end: {
+                  "dateTime": eventEndDateTime,},
+                'summary': summary,
+                'description': description,
+                'location': location
+
+              })
+            }).then((res) => res.json())
+            .then((data) =>  console.log(data))
+            .catch((err)=>console.log(err))
+        }
+  
+
+
    render() {
       return (
 
@@ -116,7 +128,7 @@ class Inputs extends Component {
             <TouchableOpacity
                style = {styles.submitButton}
                onPress = {
-                  () => this.addEvent(this.state.eventName , this.state.eventDescription, this.state.eventStartDateTime, this.state.eventEndDateTime, this.state.location, this.state.clubSoc)
+                  () => this.addEvent()
                }>
                <Text style = {styles.submitButtonText}> Submit </Text>
             </TouchableOpacity>

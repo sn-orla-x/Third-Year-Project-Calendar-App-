@@ -88,6 +88,7 @@ class LoginScreen extends Component {
       if (result.type === 'success') {
         this.onSignIn(result);
         return result.accessToken;
+        console.log(result.accessToken)
       } else {
         return { cancelled: true };
       }
