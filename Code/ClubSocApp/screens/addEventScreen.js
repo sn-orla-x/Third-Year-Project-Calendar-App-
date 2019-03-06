@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, StyleSheet, Alert } from 'react-native'
 import firebase from 'firebase'
 
 class Inputs extends Component {
@@ -76,11 +76,41 @@ class Inputs extends Component {
       .then(function(data){
          console.log(data)
       })
+    Alert.alert("Event Added!")
    }
    render() {
       return (
-         <View style = {styles.container}>
-            <TextInput style = {styles.input}
+      <ScrollView style = {styles.container}>
+          <View style={{flex:1}}>
+            <View style={{height: 75, backgroundColor: '#aad0d1'}}>
+            <View style = {styles.buttin}>
+
+            <Button 
+            title="Sign out" 
+            onPress={() => firebase.auth().signOut()}  
+            color = "#696969"
+            />
+            <Button
+            onPress={() => navigate('DashboardScreen')}
+            title="DCU C&S"
+            color="#696969"
+            />
+
+            <Button
+             onPress={() => navigate('ClubScreen')}
+              title="Clubs"
+              color="#696969"
+            /> 
+            <Button
+             onPress={() => navigate('SocScreen')}
+              title="Socs"
+              color="#696969"
+            /> 
+
+            </View>
+          </View>
+        </View>
+             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Event Name"
                placeholderTextColor = "#9a73ef"
@@ -129,7 +159,7 @@ class Inputs extends Component {
                }>
                <Text style = {styles.submitButtonText}> Submit </Text>
             </TouchableOpacity>
-         </View>
+         </ScrollView>
       )
    }
 }
@@ -153,5 +183,14 @@ const styles = StyleSheet.create({
    },
    submitButtonText:{
       color: 'white'
-   }
+   },
+   buttin: {
+    flex: 1,
+    margin: 5,
+    flexDirection: 'row',
+    //justifyContent: 'flex-end',
+    textAlign: 'right',
+    textAlignVertical: 'bottom',
+    color: '#696969',
+  },
 })

@@ -18,16 +18,16 @@ export default class App extends Component {
   }
 
 
-  addAttendee (eventID,) => {
+  addAttendee = (eventID) => {
     var url = `https://www.googleapis.com/calendar/v3/calendars/5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com/events/${eventId}`
-    var bearer = "Bearer " + "ya29.GlvEBvvjdBtlaB3kzeFByNpTz2lMH79iw4Bpc-_k_LBo1qa1ZIWl2o3M2JeK434FOx2P3dFW7TLbAm5c6Fy4ETCEm-3wwZLH0BkEDxpegIVAGlHPkfbuZs9cr8mt",
-         "Content-Type" : "application/json",
+    var bearer = "Bearer " + "ya29.GlvEBvvjdBtlaB3kzeFByNpTz2lMH79iw4Bpc-_k_LBo1qa1ZIWl2o3M2JeK434FOx2P3dFW7TLbAm5c6Fy4ETCEm-3wwZLH0BkEDxpegIVAGlHPkfbuZs9cr8mt"
+    var headers ={  "Content-Type" : "application/json",
          "Access-Control-Origin": "*",
          "Authorization": bearer}
     var data = {
       attendees : {email: 'orla.kinsella3@mail.dcu.ie'}
     }
-   }
+
 
       fetch(url, {
          method: "PUT",
