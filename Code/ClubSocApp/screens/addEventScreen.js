@@ -43,7 +43,7 @@ class Inputs extends Component {
    }
    addEvent = (summary, description, startDateTime, endDateTime, location, clubSoc) => {
      // console.log(token)
-      var bearer = "Bearer " + "ya29.GlvEBhk1-gd3onO4VZTTrZCfi9kOVWcXVGo7Kvh3MvQv-ifOGXaQoz_ZeLfkBzcBBPRg7sav5rOCCD0HuFER89_ibRFOYRDg5is9-vPqh0ZBme9isKAmSkcQUfRe";
+      var bearer = "Bearer " + "ya29.GlvEBvvjdBtlaB3kzeFByNpTz2lMH79iw4Bpc-_k_LBo1qa1ZIWl2o3M2JeK434FOx2P3dFW7TLbAm5c6Fy4ETCEm-3wwZLH0BkEDxpegIVAGlHPkfbuZs9cr8mt";
       var headers = {
          "Content-Type" : "application/json",
          "Access-Control-Origin": "*",

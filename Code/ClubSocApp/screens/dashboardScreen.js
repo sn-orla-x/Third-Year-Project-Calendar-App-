@@ -17,6 +17,30 @@ export default class App extends Component {
     events: [],
   }
 
+
+  addAttendee (eventID,) => {
+    var url = `https://www.googleapis.com/calendar/v3/calendars/5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com/events/${eventId}`
+    var bearer = "Bearer " + "ya29.GlvEBvvjdBtlaB3kzeFByNpTz2lMH79iw4Bpc-_k_LBo1qa1ZIWl2o3M2JeK434FOx2P3dFW7TLbAm5c6Fy4ETCEm-3wwZLH0BkEDxpegIVAGlHPkfbuZs9cr8mt",
+         "Content-Type" : "application/json",
+         "Access-Control-Origin": "*",
+         "Authorization": bearer}
+    var data = {
+      attendees : {email: 'orla.kinsella3@mail.dcu.ie'}
+    }
+   }
+
+      fetch(url, {
+         method: "PUT",
+         headers: headers,
+         body: JSON.stringify(data)
+      })
+      .then(function(response){
+         return response.json()
+      })
+      .then(function(data){
+         console.log(data)
+      })
+  }
   componentWillMount = async () => {
     try {
       const response = await fetch('https://www.googleapis.com/calendar/v3/calendars/5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com/events?&key=AIzaSyCWWE4pVnW42iCQGSW0ElYEeF1IuVD5OpM',
@@ -32,7 +56,7 @@ export default class App extends Component {
       console.log(e)
     }
   }
-  renderPost = ({start, location, summary, description}, i) => {
+  renderPost = ({start, location, summary, description, id}, i) => {
     return (
       <View
         key={location}
@@ -53,6 +77,7 @@ export default class App extends Component {
         </View>
         <Button
         title = "Remind me!"
+        onPress = {() => this.addAttendee(id)}
         color = "#696969"/>
 
       </View>
