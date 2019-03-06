@@ -46,17 +46,20 @@ class LoginScreen extends Component {
                     profile_picture: result.additionalUserInfo.profile.picture,
                     first_name: result.additionalUserInfo.profile.given_name,
                     last_name: result.additionalUserInfo.profile.family_name,
+                    auth: result.accessToken,
                     created_at: Date.now()
                   })
                   .then(function(snapshot) {
-                    // console.log('Snapshot', snapshot);
+                    console.log('Snapshot', snapshot);
                   });
               } else {
                 firebase
                   .database()
                   .ref('/users/' + result.user.uid)
+                  .set({auth: result.accessToken})
                   .update({
-                    last_logged_in: Date.now()
+                    last_logged_in: Date.now(),
+                    
                   });
               }
             })
@@ -79,15 +82,18 @@ class LoginScreen extends Component {
   signInWithGoogleAsync = async () => {
     try {
       const result = await Expo.Google.logInAsync({
-        androidClientId: '27581815269-bruuphh3qgll6bn9dtueg1iqg9gk6fic.apps.googleusercontent.com',
+        androidClientId: '764934368349-b6tss34pd1lafebi5u9esoiq5bnr6iju.apps.googleusercontent.com',
         behavior: 'web',
-        iosClientId: '27581815269-ljkssjd7f32b0eiskccni74g8kpfdch3.apps.googleusercontent.com', //enter ios client id
+        iosClientId: '764934368349-dk4se0h3d06ca34a59r8137dstpamkc8.apps.googleusercontent.com', //enter ios client id
         scopes: ['profile', 'email']
       });
 
       if (result.type === 'success') {
         this.onSignIn(result);
+        //this.state.auth = result.accessToken;
+        const accessToken = result.accessToken;
         return result.accessToken;
+
         console.log(result.accessToken)
       } else {
         return { cancelled: true };
@@ -108,6 +114,7 @@ class LoginScreen extends Component {
   }
 }
 export default LoginScreen;
+
 
 const styles = StyleSheet.create({
   container: {

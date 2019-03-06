@@ -84,28 +84,30 @@ export default class App extends Component {
             <Button 
             title="Sign out" 
             onPress={() => firebase.auth().signOut()}  
-            color = "#fff"
+            color = "#696969"
             />
             <Button
             onPress={() => navigate('DashboardScreen')}
             title="DCU C&S"
-            color="#fff"
+            color="#696969"
             />
-            <View style={styles.butt}>
             <Button
              onPress={() => navigate('ClubScreen')}
               title="Clubs"
-              color="#fff"
+              color="#696969"
             /> 
             <Button
              onPress={() => navigate('SocScreen')}
               title="Socs"
-              color="#fff"
+              color="#696969"
             /> 
-            </View>
             </View>
           </View>
         </View>
+        <Button
+        title = "Add an Event!"
+        onPress ={() => navigate('AddEventScreen')}
+        />
 
 
         {events.map(this.renderPost)}
@@ -163,6 +165,6 @@ const styles = StyleSheet.create({
     //justifyContent: 'flex-end',
     textAlign: 'right',
     textAlignVertical: 'bottom',
-    color: '#fff',
+    color: '#696969',
   },
 })

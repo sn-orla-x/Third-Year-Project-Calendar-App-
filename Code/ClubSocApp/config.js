@@ -1,9 +1,9 @@
   export const firebaseConfig = {
-    apiKey: "AIzaSyAaaXpyYYvfiG3dthIkTwJjoEkPH08rzP0",
-    authDomain: "dcuclubsocapp-1550065655214.firebaseapp.com",
-    databaseURL: "https://dcuclubsocapp-1550065655214.firebaseio.com/",
-    projectId: "dcuclubsocapp-1550065655214",
-    storageBucket: "dcuclubsocapp-1550065655214.appspot.com",
-    messagingSenderId: "27581815269"
+    apiKey: "AIzaSyCuKInlnFR3b2bDJSvDWjJxdllQjQgQXnE",
+    authDomain: "clubssocsdcu.firebaseapp.com",
+    databaseURL: "https://clubssocsdcu.firebaseio.com",
+    projectId: "clubssocsdcu",
+    storageBucket: "clubssocsdcu.appspot.com",
+    messagingSenderId: "764934368349"
   };
 

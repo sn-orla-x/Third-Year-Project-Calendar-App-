@@ -51,6 +51,10 @@ export default class App extends Component {
             {description}
           </Text>
         </View>
+        <Button
+        title = "Remind me!"
+        color = "#696969"/>
+
       </View>
     )
   }
