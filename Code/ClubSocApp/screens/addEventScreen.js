@@ -41,9 +41,9 @@ class Inputs extends Component {
 
       this.setState({ clubSoc: calID[text] })
    }
-   addEvent = (summary, description, startDateTime, endDteTime, location, clubSoc) => {
+   addEvent = (summary, description, startDateTime, endDateTime, location, clubSoc) => {
      // console.log(token)
-      var bearer = "Bearer " + "ya29.GlvEBmrtjhPsiLxk9OfIT9d5dFpAzxd09aDjaaIwzjY4SAt4Z-lmIDdk0gFLNqjh-tHkBKmnRpxy_svJUZETJgrY10KcXhiqiYVY7aynhvUQ9UPna6L_aJgBCFNz";
+      var bearer = "Bearer " + "ya29.GlvEBhk1-gd3onO4VZTTrZCfi9kOVWcXVGo7Kvh3MvQv-ifOGXaQoz_ZeLfkBzcBBPRg7sav5rOCCD0HuFER89_ibRFOYRDg5is9-vPqh0ZBme9isKAmSkcQUfRe";
       var headers = {
          "Content-Type" : "application/json",
          "Access-Control-Origin": "*",
@@ -52,16 +52,16 @@ class Inputs extends Component {
 
       var data = {
   "end": {
-    "dateTime": "2019-03-06T17:00:00.0",
+    "dateTime": endDateTime,
     "timeZone": "GMT"
   },
   "start": {
-    "dateTime": "2019-03-06T14:00:00.00",
+    "dateTime": startDateTime,
     "timeZone": "GMT"
   },
-  "description": "fun times",
-  "summary": "Coffee Afternoon",
-  "location": "GLA.CA124"
+  "description": description,
+  "summary": summary,
+  "location": location
 }
    var url = `https://www.googleapis.com/calendar/v3/calendars/${clubSoc}/events`
 

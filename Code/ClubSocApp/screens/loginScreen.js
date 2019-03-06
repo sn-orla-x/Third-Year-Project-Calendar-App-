@@ -85,7 +85,7 @@ class LoginScreen extends Component {
         androidClientId: '764934368349-b6tss34pd1lafebi5u9esoiq5bnr6iju.apps.googleusercontent.com',
         behavior: 'web',
         iosClientId: '764934368349-dk4se0h3d06ca34a59r8137dstpamkc8.apps.googleusercontent.com', //enter ios client id
-        scopes: ['profile', 'email']
+        scopes: ['profile', 'email','https://www.googleapis.com/auth/calendar']
       });
 
       if (result.type === 'success') {
