@@ -1,3 +1,6 @@
+//the 'renderPosts' function is a modified version of the code found at this link:
+//https://snack.expo.io/S16CbqKxW
+
 import React, { Component } from 'react';
 import { View, Text, ActivityIndicator, ScrollView, StyleSheet, Button,  AppRegistry, Alert  } from 'react-native';
 import firebase from 'firebase';
@@ -18,9 +21,9 @@ export default class App extends Component {
   }
 
 
-  addAttendee = (start, end, id) => {
+  addAttendee = (start, end, id, location, summary, description) => {
     var url = `https://www.googleapis.com/calendar/v3/calendars/5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com/events/${id}`
-    var bearer = "Bearer " + "ya29.GlvFBk5eybdMf2MtvefSTAA_WGqZgTvqILF9y751j0BJtyI0PltlxPMrzDXtlySCw6lfF8Tz12zbUGPdVu_rY46E3cL4RfxMt15Rh5mCfGFtoJT78cUaiMuMXKmK"
+    var bearer = "Bearer " + "ya29.GlvFBps0CJPLCJQZ7wORPVj3x3-YDbGgUKIajEB2cujfAcka-4b4Bd8tNXkP5WKBQc7r9IqDyFxJFa32h2L15wvNuJAMn0tejjLjimE33bClTf6SMR71HJA_Ix7d"
     var headers ={   'Content-Type': 'application/json',
     "Authorization": bearer}
     console.log(start.dateTime, end.dateTime)
@@ -29,7 +32,10 @@ export default class App extends Component {
               "timeZone": "GMT"},
       "start": {"dateTime" : start.dateTime,
                 "timeZone": "GMT"},
-      "attendees" : [{"email": 'fakesoc3yp@gmail.com'}]
+      "attendees" : [{"email": 'fakesoc3yp@gmail.com'}],
+      "summary": summary,
+      "description": description,
+      "location": location
     }
 
       fetch(url, {
@@ -43,6 +49,7 @@ export default class App extends Component {
       .then(function(data){
          console.log(data)
       })
+      Alert.alert("Event added to your google calendar!")
   }
   componentWillMount = async () => {
     try {
@@ -80,7 +87,7 @@ export default class App extends Component {
         </View>
         <Button
         title = "Remind me!"
-        onPress = {() => this.addAttendee(start, end, id)}
+        onPress = {() => this.addAttendee(start, end, id, location, summary, description)}
         color = "#696969"/>
 
       </View>

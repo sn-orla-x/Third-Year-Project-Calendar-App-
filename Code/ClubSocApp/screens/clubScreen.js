@@ -7,7 +7,8 @@ import DashboardScreen from './dashboardScreen';
 import LoadingScreen from './loadingScreen';
 import ClubScreen from './clubScreen';
 import SocScreen from './socScreen';
-import AddEventScreen from './addEventScreen'
+import AddEventScreen from './addEventScreen';
+//import LoginScreen from './LoginScreen';
 
 export default class App extends Component {
 
@@ -17,7 +18,36 @@ export default class App extends Component {
     posts: [],
     events: [],
   }
+  addAttendee = (start, end, id, summary,description,location) => {
+    var url = `https://www.googleapis.com/calendar/v3/calendars/5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com/events/${id}`
+    var bearer = "Bearer " + ""
+    var headers ={   'Content-Type': 'application/json',
+    "Authorization": bearer}
+    console.log(start.dateTime, end.dateTime)
+    var data = {
+      "end": {"dateTime" : end.dateTime,
+              "timeZone": "GMT"},
+      "start": {"dateTime" : start.dateTime,
+                "timeZone": "GMT"},
+      "attendees" : [{"email": 'fakesoc3yp@gmail.com'}],
+      "location": location,
+      "summary": summary,
+      "description": description,
+    }
 
+      fetch(url, {
+         method: "PUT",
+         headers: headers,
+         body: JSON.stringify(data)
+      })
+      .then(function(response){
+         return response.json()
+      })
+      .then(function(data){
+         console.log(data)
+      })
+      Alert.alert("Event Added to your Google Calendar!")
+  }
   componentWillMount = async () => {
     try {
       const response = await fetch('https://www.googleapis.com/calendar/v3/calendars/5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com/events?&key=AIzaSyCWWE4pVnW42iCQGSW0ElYEeF1IuVD5OpM',
@@ -33,7 +63,7 @@ export default class App extends Component {
       console.log(e)
     }
   }
-  renderPost = ({start, location, summary, description}, i) => {
+  renderPost = ({start,end , location, summary, description,id}, i) => {
     return (
       <View
         key={location}
@@ -52,6 +82,11 @@ export default class App extends Component {
             {description}
           </Text>
         </View>
+        <Button
+        title = "Remind me!"
+        onPress = {() => this.addAttendee(start, end, id,summary,description,location)}
+        color = "#696969"/>
+
       </View>
     )
   }

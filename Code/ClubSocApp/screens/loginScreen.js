@@ -1,3 +1,6 @@
+//The loginScreen, dashboardScreen and loadingScreen were all developed based on a tutorial that can be found at this link 
+//https://www.youtube.com/watch?v=ZcaQJoXY-3Q&t=496s repo found here: https://github.com/nathvarun/Expo-Google-Login-Firebase/tree/master
+
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import firebase from 'firebase';
@@ -27,7 +30,7 @@ class LoginScreen extends Component {
         // Check if we are already signed-in Firebase with the correct user.
         if (!this.isUserEqual(googleUser, firebaseUser)) {
           // Build Firebase credential with the Google ID token.
-          var credential = firebase.auth.GoogleAuthProvider.credential(
+          let credential = firebase.auth.GoogleAuthProvider.credential(
             googleUser.idToken,
             googleUser.accessToken
           );
@@ -94,7 +97,7 @@ class LoginScreen extends Component {
         const accessToken = result.accessToken;
         return result.accessToken;
 
-        console.log(result.accessToken)
+       console.log(accessToken)
       } else {
         return { cancelled: true };
       }
@@ -114,6 +117,7 @@ class LoginScreen extends Component {
   }
 }
 export default LoginScreen;
+//export credential as credential;
 
 
 const styles = StyleSheet.create({
