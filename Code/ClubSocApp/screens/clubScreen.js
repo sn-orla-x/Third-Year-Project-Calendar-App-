@@ -7,6 +7,7 @@ import DashboardScreen from './dashboardScreen';
 import LoadingScreen from './loadingScreen';
 import ClubScreen from './clubScreen';
 import SocScreen from './socScreen';
+import AddEventScreen from './addEventScreen'
 
 export default class App extends Component {
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, TextInput, StyleSheet, Alert } from 'react-native'
+import { View, Text, TouchableOpacity, TextInput, StyleSheet, Alert, ScrollView, Button } from 'react-native'
 import firebase from 'firebase'
 
 class Inputs extends Component {
@@ -43,7 +43,7 @@ class Inputs extends Component {
    }
    addEvent = (summary, description, startDateTime, endDateTime, location, clubSoc) => {
      // console.log(token)
-      var bearer = "Bearer " + "ya29.GlvEBvvjdBtlaB3kzeFByNpTz2lMH79iw4Bpc-_k_LBo1qa1ZIWl2o3M2JeK434FOx2P3dFW7TLbAm5c6Fy4ETCEm-3wwZLH0BkEDxpegIVAGlHPkfbuZs9cr8mt";
+      var bearer = "Bearer " + "ya29.GlvFBk5eybdMf2MtvefSTAA_WGqZgTvqILF9y751j0BJtyI0PltlxPMrzDXtlySCw6lfF8Tz12zbUGPdVu_rY46E3cL4RfxMt15Rh5mCfGFtoJT78cUaiMuMXKmK";
       var headers = {
          "Content-Type" : "application/json",
          "Access-Control-Origin": "*",
@@ -78,6 +78,7 @@ class Inputs extends Component {
       })
     Alert.alert("Event Added!")
    }
+
    render() {
       return (
       <ScrollView style = {styles.container}>
@@ -184,7 +185,7 @@ const styles = StyleSheet.create({
    submitButtonText:{
       color: 'white'
    },
-   buttin: {
+     buttin: {
     flex: 1,
     margin: 5,
     flexDirection: 'row',

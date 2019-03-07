@@ -18,16 +18,19 @@ export default class App extends Component {
   }
 
 
-  addAttendee = (eventID) => {
-    var url = `https://www.googleapis.com/calendar/v3/calendars/5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com/events/${eventId}`
-    var bearer = "Bearer " + "ya29.GlvEBvvjdBtlaB3kzeFByNpTz2lMH79iw4Bpc-_k_LBo1qa1ZIWl2o3M2JeK434FOx2P3dFW7TLbAm5c6Fy4ETCEm-3wwZLH0BkEDxpegIVAGlHPkfbuZs9cr8mt"
-    var headers ={  "Content-Type" : "application/json",
-         "Access-Control-Origin": "*",
-         "Authorization": bearer}
+  addAttendee = (start, end, id) => {
+    var url = `https://www.googleapis.com/calendar/v3/calendars/5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com/events/${id}`
+    var bearer = "Bearer " + "ya29.GlvFBk5eybdMf2MtvefSTAA_WGqZgTvqILF9y751j0BJtyI0PltlxPMrzDXtlySCw6lfF8Tz12zbUGPdVu_rY46E3cL4RfxMt15Rh5mCfGFtoJT78cUaiMuMXKmK"
+    var headers ={   'Content-Type': 'application/json',
+    "Authorization": bearer}
+    console.log(start.dateTime, end.dateTime)
     var data = {
-      attendees : {email: 'orla.kinsella3@mail.dcu.ie'}
+      "end": {"dateTime" : end.dateTime,
+              "timeZone": "GMT"},
+      "start": {"dateTime" : start.dateTime,
+                "timeZone": "GMT"},
+      "attendees" : [{"email": 'fakesoc3yp@gmail.com'}]
     }
-
 
       fetch(url, {
          method: "PUT",
@@ -46,7 +49,7 @@ export default class App extends Component {
       const response = await fetch('https://www.googleapis.com/calendar/v3/calendars/5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com/events?&key=AIzaSyCWWE4pVnW42iCQGSW0ElYEeF1IuVD5OpM',
         {'method': 'GET'})
       const posts = await response.json()
-            console.log(posts.items[1].summary, posts.items[1].description)
+            console.log(posts.items[1].summary, posts.items[1].description, posts.items[1].id)
       const events = posts.items;
       console.log(events)
 
@@ -56,7 +59,7 @@ export default class App extends Component {
       console.log(e)
     }
   }
-  renderPost = ({start, location, summary, description, id}, i) => {
+  renderPost = ({start, end , location, summary, description, id}, i) => {
     return (
       <View
         key={location}
@@ -77,7 +80,7 @@ export default class App extends Component {
         </View>
         <Button
         title = "Remind me!"
-        onPress = {() => this.addAttendee(id)}
+        onPress = {() => this.addAttendee(start, end, id)}
         color = "#696969"/>
 
       </View>
