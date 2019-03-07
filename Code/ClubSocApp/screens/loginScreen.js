@@ -34,6 +34,8 @@ class LoginScreen extends Component {
             googleUser.idToken,
             googleUser.accessToken
           );
+          global.accessToken = googleUser.accessToken
+          console.log(accessToken)
           // Sign in with credential from the Google user.
           firebase
             .auth()

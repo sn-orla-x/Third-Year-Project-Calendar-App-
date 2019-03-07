@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, TextInput, StyleSheet, Alert, ScrollView, Button } from 'react-native'
 import firebase from 'firebase'
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+
+import DashboardScreen from './dashboardScreen';
+import LoadingScreen from './loadingScreen';
+import ClubScreen from './clubScreen';
+import SocScreen from './socScreen';
 
 class Inputs extends Component {
    state = {
@@ -43,7 +49,7 @@ class Inputs extends Component {
    }
    addEvent = (summary, description, startDateTime, endDateTime, location, clubSoc) => {
      // console.log(token)
-      var bearer = "Bearer " + "ya29.GlvFBps0CJPLCJQZ7wORPVj3x3-YDbGgUKIajEB2cujfAcka-4b4Bd8tNXkP5WKBQc7r9IqDyFxJFa32h2L15wvNuJAMn0tejjLjimE33bClTf6SMR71HJA_Ix7d";
+      var bearer = "Bearer " + global.accessToken;
       var headers = {
          "Content-Type" : "application/json",
          "Access-Control-Origin": "*",
@@ -80,6 +86,7 @@ class Inputs extends Component {
    }
 
    render() {
+        const {navigate} = this.props.navigation;
       return (
       <ScrollView style = {styles.container}>
           <View style={{flex:1}}>

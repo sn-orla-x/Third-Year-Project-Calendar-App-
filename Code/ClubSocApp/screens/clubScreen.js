@@ -20,7 +20,7 @@ export default class App extends Component {
   }
   addAttendee = (start, end, id, summary,description,location) => {
     var url = `https://www.googleapis.com/calendar/v3/calendars/5ieg9f866hkuq7t2jvanst1808@group.calendar.google.com/events/${id}`
-    var bearer = "Bearer " + ""
+    var bearer = "Bearer " + global.accessToken
     var headers ={   'Content-Type': 'application/json',
     "Authorization": bearer}
     console.log(start.dateTime, end.dateTime)
