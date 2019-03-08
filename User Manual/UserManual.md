@@ -16,12 +16,14 @@ When you launch the app, you will be presented with the option to login. You mus
 log in to use the app. In order to do this, enter your own email and password in the
 spaces provided.
 #### ![Login screen on iOS](./User Manual/images/Login.jpg)
+#### ![Login screen on Android](./User Manual/images/AndroidLogin.jpg)
 
 #### 2. Home Screen
 The home screen contains some of the main functionality of the app in the form of
 buttons you can press that do different things. Some of the buttons will be discussed
 in detail in this section with the rest discussed in detail in following sections.
 #### ![Home screen on iOS](./User Manual/images/Homescreen.jpg)
+#### ![Home screen on Android](./User Manual/images/AndroidHmScrn.jpg)
 
 ##### 2.1. Home Screen Buttons
 There are multiple buttons on the home screen. Each button has its own
@@ -52,6 +54,7 @@ required for the event they are looking to create, such as the event name, time,
 and location. Once all the questions have been answered appropriately, the event
 will be submitted to the google calendar.
 #### ![Adding an event on iOS](./User Manual/images/AddEvent.jpg)
+#### ![Adding an event on Android](./User Manual/images/AndroidAddEvent.jpg)
 
 ### 4. List events
 Some upcoming events will be listed on the homescreen for users to view and look
