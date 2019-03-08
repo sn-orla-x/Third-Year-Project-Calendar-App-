@@ -1,7 +1,7 @@
-#Clubs and Socs Calendar App
-##CA326 User Manual
-###Orla Kinsella and Phoebe Cooney
-###Table of Contents
+# Clubs and Socs Calendar App
+## CA326 User Manual
+### Orla Kinsella and Phoebe Cooney
+### Table of Contents
 ● 1 Login
 ● 2 Home Screen
 ○ 2.1 Home Screen Buttons
