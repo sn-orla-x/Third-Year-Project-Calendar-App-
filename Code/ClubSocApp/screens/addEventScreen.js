@@ -180,6 +180,9 @@ class Inputs extends Component {
    }
 }
 export default Inputs
+///module.exports.handleStartDateTime = handleStartDateTime;
+//module.exports.handleEndDateTime = handleEndDateTime;
+//module.exports.handleClubSoc = handleClubSoc;
 
 const styles = StyleSheet.create({
    container: {
