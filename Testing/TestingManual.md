@@ -25,9 +25,9 @@ We carried out user testing by asking people to use the app and complete certain
 like signing in or out, adding and event or viewing by club or soc. After completing 
 these tasks, we asked them to fill out a quick questionnaire. The results from it can 
 be found below.
-#### ![Question 1 from survey](./Testing/images/question 1.png)
-#### ![Question 2 from survey](./Testing/images/question 2.png)
-#### ![Question 3 from survey](./Testing/images/question 3.png)
+#### ![Question 1 from survey](./Testing/images/question 1.jpg)
+#### ![Question 2 from survey](./Testing/images/question 2.jpg)
+#### ![Question 3 from survey](./Testing/images/question 3.jpg)
 
 We also asked users for some general feedback. For the most part the users were happy with 
 the app but we did receive a few pointers on the layout of the start time and end time 
