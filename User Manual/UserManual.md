@@ -15,6 +15,7 @@
 When you launch the app, you will be presented with the option to login. You must
 log in to use the app. In order to do this, enter your own email and password in the
 spaces provided.
+![Login screen on iOS](./User Manual/Login.jpg)
 
 #### 2. Home Screen
 The home screen contains some of the main functionality of the app in the form of
