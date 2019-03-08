@@ -114,6 +114,7 @@ class LoginScreen extends Component {
         <Button
           title="Sign In With Google"
           onPress={() => this.signInWithGoogleAsync()}
+          accessibilityLabel = "Sign in using this Button"
         />
       </View>
     );
