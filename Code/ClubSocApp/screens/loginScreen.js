@@ -34,7 +34,6 @@ class LoginScreen extends Component {
             googleUser.idToken,
             googleUser.accessToken
           );
-          //I know this isn't best practice, but it's the easiest way to do this on short notice - ideally would be changed refactoring
           global.accessToken = googleUser.accessToken
           console.log(accessToken)
           // Sign in with credential from the Google user.
