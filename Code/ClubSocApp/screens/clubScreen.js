@@ -68,16 +68,13 @@ export default class App extends Component {
       <View
         key={location}
         style={styles.post}
-        accessible = {true}
       >
-        <View style={styles.postNumber}
-              accessible = {true}>
+        <View style={styles.postNumber}>
           <Text>
             {start.dateTime} in {location}
           </Text>
         </View>
-        <View style={styles.postContent}
-              accessible = {true}>
+        <View style={styles.postContent}>
           <Text>
             {summary}
           </Text>
@@ -88,9 +85,7 @@ export default class App extends Component {
         <Button
         title = "Remind me!"
         onPress = {() => this.addAttendee(start, end, id,summary,description,location)}
-        color = "#696969"
-        accessible = {true}
-        accessibilityLabel = "Use this button to get a reminder for this event"/>
+        color = "#696969"/>
 
       </View>
     )
@@ -101,9 +96,7 @@ export default class App extends Component {
     const {navigate} = this.props.navigation;
     if (loading) {
       return (
-        <View style={styles.center}
-              accessible = {true}
-              accessibilityLabel = "Loading spinner while posts are loaded">
+        <View style={styles.center}>
           <ActivityIndicator animating={true} />
         </View>
       )
@@ -111,8 +104,7 @@ export default class App extends Component {
 
     if (error) {
       return (
-        <View style={styles.center}
-              accessible = {true}>
+        <View style={styles.center}>
           <Text>
             Failed to load posts!
           </Text>
@@ -120,42 +112,30 @@ export default class App extends Component {
       )
     }
     return (
-    <ScrollView style = {styles.container}
-                accessible = {true}>
-      <View style={{flex:1}}
-            accessible = {true}>
-        <View style={{height: 75, backgroundColor: '#aad0d1'}}
-              accessible = {true}>
-            <View style = {styles.buttin}
-                  accessible = {true}>
+    <ScrollView style = {styles.container}>
+      <View style={{flex:1}}>
+        <View style={{height: 75, backgroundColor: '#aad0d1'}}>
+            <View style = {styles.buttin}>
 
             <Button 
             title="Sign out" 
             onPress={() => firebase.auth().signOut()}  
             color = "#696969"
-            accessible = {true}
-            accessibilityLabel = "Use this button to sign out"
             />
             <Button
             onPress={() => navigate('DashboardScreen')}
             title="DCU C&S"
             color="#696969"
-            accessible = {true}
-            accessibilityLabel = "Use this button to navigate to the main dashboard"
             />
             <Button
              onPress={() => navigate('ClubScreen')}
               title="Clubs"
               color="#696969"
-              accessible = {true}
-              accessibilityLabel = "Use this button to navigate to the clubs dashboard"
             /> 
             <Button
              onPress={() => navigate('SocScreen')}
               title="Socs"
               color="#696969"
-              accessible = {true}
-               accessibilityLabel = "Use this button to navigate to the societies dashboard"
             /> 
             </View>
           </View>
@@ -163,8 +143,6 @@ export default class App extends Component {
         <Button
         title = "Add an Event!"
         onPress ={() => navigate('AddEventScreen')}
-        accessible = {true}
-        accessibilityLabel = "Use this button to navigate to the add event screen"
         />
 
 

@@ -123,56 +123,48 @@ class Inputs extends Component {
                placeholder = "Event Name"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
-               onChangeText = {this.handleSummary}
-               autoFocus = {true}/>
+               onChangeText = {this.handleSummary}/>
             
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Event Description"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
-               onChangeText = {this.handleDescription}
-               autoFocus = {true}/>
+               onChangeText = {this.handleDescription}/>
 
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Start Time Eg YYYY-MM-DD 14:00"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
-               onChangeText = {this.handleStartDateTime}
-               autoFocus = {true}/>
+               onChangeText = {this.handleStartDateTime}/>
             
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "End Time Eg YYYY-MM-DD 16:00"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
-               onChangeText = {this.handleEndDateTime}
-               autoFocus = {true}/>
+               onChangeText = {this.handleEndDateTime}/>
 
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Location"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
-               onChangeText = {this.handleLocation}
-               autoFocus = {true}/>
+               onChangeText = {this.handleLocation}/>
             
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Club or Society"
                placeholderTextColor = "#9a73ef"
                autoCapitalize = "none"
-               onChangeText = {this.handleClubSoc}
-               autoFocus = {true}/>
+               onChangeText = {this.handleClubSoc}/>
             
             <TouchableOpacity
                style = {styles.submitButton}
                onPress = {
                   () => this.addEvent(this.state.summary, this.state.description, this.state.startDateTime, this.state.endDateTime, this.state.location, this.state.clubSoc)
-               }
-               accessible = {true}
-               accessibilityLabel = "Use this button to submit the data you've entered">
+               }>
                <Text style = {styles.submitButtonText}> Submit </Text>
             </TouchableOpacity>
          </ScrollView>
