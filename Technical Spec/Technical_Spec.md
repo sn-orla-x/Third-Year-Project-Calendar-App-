@@ -58,13 +58,20 @@ packagers, bundlers and Expo to build the completed application.
 
 3. High Level Design
 3.1. Component Diagram
+
 ![Component diagram](./Technical Spec/images/ComponentDiagram1.jpg)
+
 3.2. Data Flow Diagram
+
 ![Data Flow diagram](./Technical Spec/images/DataFlow2.0.jpg)
+
 3.3. State Machines
+
 ![State Machine diagram for adding an event](./Technical Spec/images/StateMachines-add1.jpg)
 ![State Machine diagram for logging in](./Technical Spec/images/StateMachines-login.jpg)
+
 3.4. Sequence Diagrams
+
 ![Sequence diagram for viewing club events](./Technical Spec/images/SeqDia-Club.jpg)
 ![Sequence diagram for viewing the home screen](./Technical Spec/images/SeqDia-hmscrn1.jpg)
 
@@ -109,19 +116,31 @@ take the delete function out, otherwise anyone could remove events from the cale
 5.2. Installation Instructions
 Downloading the Expo Client
 1.1. Open the App Store (iOS) or the Google PlayStore (Android).
+
 ![Downloading Expo on iOS and Android](./Technical Spec/images/inin1_1.jpg)
+
 1.2. Search for “Expo”.
+
 ![Searching Expo on iOS and Android](./Technical Spec/images/inin1_2.jpg)
+
 1.3. Click the “Get” button (iOS) or the “Install” button (Android).
+
 ![How to download Expo on iOS and Android](./Technical Spec/images/inin1_1.jpg)
+
 Opening the Clubs and Socs Calendar App
+
 2.1. Open the project in Expo.
+
 2.1.1. On iOS: open camera and scan QR code. This will open the project in
 Expo.
+
 ![Opening project in Expo on iOS](./Technical Spec/images/inin2_1_1.jpg)
+
 2.1.2. On Android: open Expo and open the QR scanner in Expo to start the
 project.
+
 ![Opening project in Expo on Android](./Technical Spec/images/inin2_1_2.jpg)
+
 6. Future Plans
 ● Get the delete function working. Once we have a way to develop different views for
 the app we will implement the delete function, if we put it in now any user could
