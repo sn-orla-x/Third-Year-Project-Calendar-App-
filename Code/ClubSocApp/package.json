@@ -4,25 +4,43 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true,
+    "preset": "react-native",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [" C:/Users/Owner/Desktop/2019-ca326-cooneyp-3rdyearproject/Code/ClubSocApp/setupTests.js"]
   },
   "dependencies": {
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-dynamic-import-webpack": "^1.1.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "expo": "^32.0.0",
     "firebase": "^5.8.4",
     "google-auth-library": "^1.0.0",
     "googleapis": "^27.0.0",
     "react": "16.5.0",
+    "react-hot-loader": "^4.8.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-elements": "^1.0.0",
     "react-native-vector-icons": "^6.2.0",
     "react-navigation": "^3.3.2",
+    "react-test-renderer": "^16.8.4",
     "readline-sync": "^1.4.9"
   },
   "devDependencies": {
+    "babel-jest": "^24.3.1",
     "babel-preset-expo": "^5.0.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
-    "jest": "^24.3.0"
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^24.3.1"
   },
   "private": true
 }
