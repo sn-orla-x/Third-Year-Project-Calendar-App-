@@ -68,7 +68,7 @@ packagers, bundlers and Expo to build the completed application.
 3.3. State Machines
 
 ![State Machine diagram for adding an event](./Technical Spec/images/StateMachines-add1.jpg)
-![State Machine diagram for logging in](./Technical Spec/images/StateMachines-login.jpg)
+![State Machine diagram for logging in](./Technical Spec/images/StateMachine-login.jpg)
 
 3.4. Sequence Diagrams
 
