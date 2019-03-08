@@ -54,7 +54,7 @@ export default class App extends Component {
       const response = await fetch('https://www.googleapis.com/calendar/v3/calendars/4afhe3v6jqi6f9ohj658d5s8r4@group.calendar.google.com/events?&key=AIzaSyCWWE4pVnW42iCQGSW0ElYEeF1IuVD5OpM',
         {'method': 'GET'})
       const posts = await response.json()
-          //  console.log(posts.items[1].summary, posts.items[1].description)
+            console.log(posts.items[1].summary, posts.items[1].description)
       const events = posts.items;
       console.log(events)
 
